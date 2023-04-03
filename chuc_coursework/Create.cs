@@ -113,8 +113,8 @@ namespace chuc_coursework
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string d = textBox1.Text + comboBox1.Text + comboBox2.Text + textBox7.Text + textBox3.Text + textBox4.Text + comboBox3.Text + textBox5.Text;
-            d = string.Empty;
+            //string d = textBox1.Text + comboBox1.Text + comboBox2.Text + textBox7.Text + textBox3.Text + textBox4.Text + comboBox3.Text + textBox5.Text;
+            //d = string.Empty;
         }
     }
 }
