@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Google.Protobuf.WellKnownTypes;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,6 +24,7 @@ namespace chuc_coursework
         {
             Toll();
             Po();
+            Vo();
         }
         public void Toll()
         {
@@ -36,6 +38,7 @@ namespace chuc_coursework
             conn.Close();
             reader.Close();
         }
+
         public void Po()
         {
             MySqlConnection conn = new MySqlConnection(authorization.connStr);
@@ -49,19 +52,31 @@ namespace chuc_coursework
             reader.Close();
         }
 
+        public void Vo()
+        {
+            MySqlConnection conn = new MySqlConnection(authorization.connStr);
+            conn.Open();
+            string sql = "SELECT nds FROM NDS";
+            MySqlCommand command = new MySqlCommand(sql, conn);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+                comboBox3.Items.Add(reader[0].ToString());
+            conn.Close();
+            reader.Close();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             MySqlConnection conn = new MySqlConnection(authorization.connStr);
             conn.Open();
             MySqlCommand command = new MySqlCommand("INSERT INTO ReceiptInvoice (date,number,dateShipment,provider,retailSum,incomingSum) values (@date,@number,@dateShipment,@provider,@retailSum,@incomingSum)");
             command.Connection = conn;
-            //command.Parameters.AddWithValue("id", textBox2.Text);
             command.Parameters.AddWithValue("date", dateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm:ss"));
             command.Parameters.AddWithValue("number", textBox3.Text);
             command.Parameters.AddWithValue("dateShipment", dateTimePicker2.Value.ToString("yyyy-MM-dd HH:mm:ss"));
             command.Parameters.AddWithValue("provider", comboBox1.SelectedItem);
             command.Parameters.AddWithValue("retailSum", textBox6.Text);
-            command.Parameters.AddWithValue("incomingSum", textBox4.Text);
+            //command.Parameters.AddWithValue("incomingSum", textBox4.Text);
             command.ExecuteNonQuery();
             conn.Close();
         }
@@ -74,21 +89,32 @@ namespace chuc_coursework
         private void button3_Click(object sender, EventArgs e)
         {
             listBox1.Items.Add($"номер: {textBox1.Text}, контрагент: {comboBox1.Text}, название: {comboBox2.Text}, количество: {textBox3.Text}");
-        }
-        
-        private void label16_Click(object sender, EventArgs e)
-        {
-            
+            decimal colich = Convert.ToDecimal(textBox3.Text);
+            decimal prih = Convert.ToDecimal(textBox4.Text);
+            decimal nd = Convert.ToDecimal(comboBox3.Text);
+            switch (nd)
+            {
+                case 10:
+                    decimal nan = colich * (prih * 1.1m);
+                    label8.Text = Convert.ToString(nan);
+                    decimal nazen = Convert.ToDecimal(textBox5.Text);
+                    decimal m = nan + nazen;
+                    label14.Text = Convert.ToString(m);
+                    break;
+                case 20:
+                    decimal na = colich * (prih * 1.2m);
+                    label8.Text = Convert.ToString(na);
+                    decimal naze = Convert.ToDecimal(textBox5.Text);
+                    decimal mm = na + naze;
+                    label14.Text = Convert.ToString(mm);
+                    break;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int pz = Convert.ToInt32(textBox4.Text);
-            int nds = Convert.ToInt32(textBox8.Text);
-            int naz = Convert.ToInt32(textBox5.Text);
-            
-            decimal vsego = Convert.ToInt32(textBox6.Text) * (pz + nds + naz);
-            label16.Text = Convert.ToString(vsego);
+            string d = textBox1.Text + comboBox1.Text + comboBox2.Text + textBox7.Text + textBox3.Text + textBox4.Text + comboBox3.Text + textBox5.Text;
+            d = string.Empty;
         }
     }
 }
