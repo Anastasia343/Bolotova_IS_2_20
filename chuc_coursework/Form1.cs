@@ -67,38 +67,7 @@ namespace chuc_coursework
             reader.Close();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                MySqlConnection conn = new MySqlConnection(authorization.connStr);
-                conn.Open();
-                MySqlCommand command = new MySqlCommand("INSERT INTO Provider (id, name, address, telephone, score, mail, INN, OGRN, KPP) values (@id, @name, @address, @telephone, @score, @mail, @INN, @OGRN, @KPP)");
-                command.Connection = conn;
-                command.Parameters.AddWithValue("id", textBox1.Text);
-                command.Parameters.AddWithValue("name", textBox2.Text);
-                command.Parameters.AddWithValue("address", textBox3.Text);
-                command.Parameters.AddWithValue("telephone", textBox4.Text);
-                command.Parameters.AddWithValue("score", textBox5.Text);
-                command.Parameters.AddWithValue("mail", textBox6.Text);
-                command.Parameters.AddWithValue("INN", textBox7.Text);
-                command.Parameters.AddWithValue("OGRN", textBox8.Text);
-                command.Parameters.AddWithValue("KPP", textBox9.Text);
-                command.ExecuteNonQuery();
-                conn.Close();
-            }
-            catch (MySql.Data.MySqlClient.MySqlException) 
-            {
-                MessageBox.Show("данное id уже присутствует или поле не заполнено");
-            }
-            finally
-            { 
-                textBox1.Text = String.Empty;
-            }
-
-            
-            
-        }
+        
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -108,14 +77,14 @@ namespace chuc_coursework
 
         private void button6_Click(object sender, EventArgs e)
         {
-            MySqlConnection conn = new MySqlConnection(authorization.connStr);
-            string id = textBox1.Text;
-            string MySQL = string.Format("DELETE FROM Provider WHERE (id = {0})", id);
-            conn.Open();
-            MySqlCommand command = new MySqlCommand(MySQL, conn);
-            command.ExecuteNonQuery();
-            conn.Close();
-            textBox1.Text = String.Empty;
+            //MySqlConnection conn = new MySqlConnection(authorization.connStr);
+            //string id = textBox1.Text;
+            //string MySQL = string.Format("DELETE FROM Provider WHERE (id = {0})", id);
+            //conn.Open();
+            //MySqlCommand command = new MySqlCommand(MySQL, conn);
+            //command.ExecuteNonQuery();
+            //conn.Close();
+            //textBox1.Text = String.Empty;
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -151,6 +120,13 @@ namespace chuc_coursework
             Menu menu = new Menu();
             this.Hide();
             menu.Show();
+        }
+
+        private void createToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Createe2 createe2 = new Createe2();
+            
+            createe2.Show();
         }
     }
 }

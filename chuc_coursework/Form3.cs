@@ -46,7 +46,7 @@ namespace chuc_coursework
             List<string[]> hy = new List<string[]>();
             while (reader.Read())
             {
-                hy.Add(new string[7]);
+                hy.Add(new string[8]);
                 hy[hy.Count - 1][0] = reader[0].ToString();
                 hy[hy.Count - 1][1] = reader[1].ToString();
                 hy[hy.Count - 1][2] = reader[2].ToString();
@@ -54,6 +54,7 @@ namespace chuc_coursework
                 hy[hy.Count - 1][4] = reader[4].ToString();
                 hy[hy.Count - 1][5] = reader[5].ToString();
                 hy[hy.Count - 1][6] = reader[6].ToString();
+                hy[hy.Count - 1][7] = reader[7].ToString();
             }
             foreach (string[] d in hy)
             {

@@ -67,18 +67,21 @@ namespace chuc_coursework
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             MySqlConnection conn = new MySqlConnection(authorization.connStr);
             conn.Open();
-            MySqlCommand command = new MySqlCommand("INSERT INTO ReceiptInvoice (date,number,dateShipment,provider,retailSum,incomingSum) values (@date,@number,@dateShipment,@provider,@retailSum,@incomingSum)");
+            MySqlCommand command = new MySqlCommand("INSERT INTO ReceiptInvoice (date,number,dateShipment,provider,retailSum,incomingSum,quantity) values (@date,@number,@dateShipment,@provider,@retailSum,@incomingSum,@quantity)");
             command.Connection = conn;
             command.Parameters.AddWithValue("date", dateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm:ss"));
             command.Parameters.AddWithValue("number", textBox3.Text);
             command.Parameters.AddWithValue("dateShipment", dateTimePicker2.Value.ToString("yyyy-MM-dd HH:mm:ss"));
             command.Parameters.AddWithValue("provider", comboBox1.SelectedItem);
-            command.Parameters.AddWithValue("retailSum", textBox6.Text);
-            //command.Parameters.AddWithValue("incomingSum", textBox4.Text);
+            command.Parameters.AddWithValue("incomingSum", textBox4.Text);
+            command.Parameters.AddWithValue("retailSum", Convert.ToDecimal(textBox2.Text));
+            command.Parameters.AddWithValue("quantity", textBox3.Text);
             command.ExecuteNonQuery();
             conn.Close();
+            this.Close();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -96,25 +99,31 @@ namespace chuc_coursework
             {
                 case 10:
                     decimal nan = colich * (prih * 1.1m);
-                    label8.Text = Convert.ToString(nan);
+                    textBox2.Text = ($"{Convert.ToString(nan)} руб.");
+
                     decimal nazen = Convert.ToDecimal(textBox5.Text);
                     decimal m = nan + nazen;
-                    label14.Text = Convert.ToString(m);
+                    textBox6.Text = ($"{Convert.ToString(m)} руб.");
                     break;
                 case 20:
                     decimal na = colich * (prih * 1.2m);
-                    label8.Text = Convert.ToString(na);
+                    textBox2.Text = ($"{Convert.ToString(na)} руб.");
+
                     decimal naze = Convert.ToDecimal(textBox5.Text);
                     decimal mm = na + naze;
-                    label14.Text = Convert.ToString(mm);
+                    textBox6.Text =($"{Convert.ToString(mm)} руб.");
                     break;
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //string d = textBox1.Text + comboBox1.Text + comboBox2.Text + textBox7.Text + textBox3.Text + textBox4.Text + comboBox3.Text + textBox5.Text;
-            //d = string.Empty;
+            
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

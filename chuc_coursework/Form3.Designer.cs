@@ -40,6 +40,7 @@
             this.provider = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.retailSum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.incomingSum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -84,10 +85,11 @@
             this.dateShipment,
             this.provider,
             this.retailSum,
-            this.incomingSum});
+            this.incomingSum,
+            this.quantity});
             this.dataGridView1.Location = new System.Drawing.Point(12, 27);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(744, 278);
+            this.dataGridView1.Size = new System.Drawing.Size(845, 278);
             this.dataGridView1.TabIndex = 4;
             // 
             // menuStrip1
@@ -144,6 +146,11 @@
             this.incomingSum.HeaderText = "incomingSum";
             this.incomingSum.Name = "incomingSum";
             // 
+            // quantity
+            // 
+            this.quantity.HeaderText = "quantity";
+            this.quantity.Name = "quantity";
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,5 +186,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn provider;
         private System.Windows.Forms.DataGridViewTextBoxColumn retailSum;
         private System.Windows.Forms.DataGridViewTextBoxColumn incomingSum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
     }
 }
