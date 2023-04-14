@@ -73,16 +73,16 @@ namespace chuc_coursework
             MySqlCommand command = new MySqlCommand("INSERT INTO ReceiptInvoice (date,number,dateShipment,provider,retailSum,incomingSum,quantity,totalSum) values (@date,@number,@dateShipment,@provider,@retailSum,@incomingSum,@quantity,@totalSum)");
             command.Connection = conn;
             command.Parameters.AddWithValue("date", dateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm:ss"));
-            command.Parameters.AddWithValue("number", textBox3.Text);
+            command.Parameters.AddWithValue("number", textBox1.Text);
             command.Parameters.AddWithValue("dateShipment", dateTimePicker2.Value.ToString("yyyy-MM-dd HH:mm:ss"));
             command.Parameters.AddWithValue("provider", comboBox1.SelectedItem);
             command.Parameters.AddWithValue("incomingSum", textBox4.Text);
-            command.Parameters.AddWithValue("retailSum", Convert.ToDecimal(textBox6.Text));
+            command.Parameters.AddWithValue("retailSum", Convert.ToDecimal(textBox6.Text.Split(' ')[0]));
             command.Parameters.AddWithValue("quantity", textBox3.Text);
-            command.Parameters.AddWithValue("totalSum", Convert.ToDecimal(textBox2.Text));
+            command.Parameters.AddWithValue("totalSum", Convert.ToDecimal(textBox2.Text.Split(' ')[0]));
             command.ExecuteNonQuery();
             conn.Close();
-            this.Close();
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -100,19 +100,19 @@ namespace chuc_coursework
             {
                 case 10:
                     decimal nan = colich * (prih * 1.1m);
-                    textBox2.Text = /*($"{*/Convert.ToString(nan) /*руб."*/;
+                    textBox2.Text = $"{Convert.ToString(nan)} руб.";
 
             decimal nazen = Convert.ToDecimal(textBox5.Text);
                     decimal m = nan + nazen;
-                    textBox6.Text = Convert.ToString(m);
+                    textBox6.Text = $"{Convert.ToString(m)} руб.";
                     break;
                 case 20:
                     decimal na = colich * (prih * 1.2m);
-                    textBox2.Text = Convert.ToString(na);
+                    textBox2.Text = $"{Convert.ToString(na)} руб.";
 
                     decimal naze = Convert.ToDecimal(textBox5.Text);
                     decimal mm = na + naze;
-                    textBox6.Text =Convert.ToString(mm);
+                    textBox6.Text =$"{Convert.ToString(mm)} руб.";
                     break;
             }
         }
