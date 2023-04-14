@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
+
 namespace chuc_coursework
 {
     public partial class Createe2 : Form
@@ -41,7 +42,14 @@ namespace chuc_coursework
             command.Parameters.AddWithValue("KPP", textBox9.Text);
             command.ExecuteNonQuery();
             conn.Close();
+            this.Hide();
             
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Createe2 createe2 = new Createe2();
+            createe2.Close();
         }
     }
 }

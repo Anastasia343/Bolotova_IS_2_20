@@ -77,6 +77,7 @@ namespace chuc_coursework
             command.Parameters.AddWithValue("dateShipment", dateTimePicker2.Value.ToString("yyyy-MM-dd HH:mm:ss"));
             command.Parameters.AddWithValue("provider", comboBox1.SelectedItem);
             command.Parameters.AddWithValue("incomingSum", textBox4.Text);
+            
             command.Parameters.AddWithValue("retailSum", Convert.ToDecimal(textBox2.Text));
             command.Parameters.AddWithValue("quantity", textBox3.Text);
             command.ExecuteNonQuery();
@@ -124,6 +125,13 @@ namespace chuc_coursework
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Createe2 createe2 = new Createe2();
+            this.Hide();
+            createe2.Show();
         }
     }
 }

@@ -68,8 +68,10 @@ namespace chuc_coursework
         private void createToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Create v = new Create();
-            v.ShowDialog();
-            dataGridView1.Rows.Clear();
+
+            v.Show();
+            //dataGridView1.Rows.Clear();
+            this.Hide();
             Koll();
         }
     }
