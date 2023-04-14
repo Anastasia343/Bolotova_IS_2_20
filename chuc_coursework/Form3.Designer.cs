@@ -39,9 +39,9 @@
             this.retailSum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.incomingSum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalSum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.totalSum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -89,9 +89,9 @@
             this.incomingSum,
             this.quantity,
             this.totalSum});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 27);
+            this.dataGridView1.Location = new System.Drawing.Point(30, 38);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(945, 278);
+            this.dataGridView1.Size = new System.Drawing.Size(1045, 371);
             this.dataGridView1.TabIndex = 4;
             // 
             // id
@@ -134,6 +134,11 @@
             this.quantity.HeaderText = "quantity";
             this.quantity.Name = "quantity";
             // 
+            // totalSum
+            // 
+            this.totalSum.HeaderText = "totalSum";
+            this.totalSum.Name = "totalSum";
+            // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.BurlyWood;
@@ -152,11 +157,6 @@
             this.createToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.createToolStripMenuItem.Text = "create";
             this.createToolStripMenuItem.Click += new System.EventHandler(this.createToolStripMenuItem_Click);
-            // 
-            // totalSum
-            // 
-            this.totalSum.HeaderText = "totalSum";
-            this.totalSum.Name = "totalSum";
             // 
             // Form3
             // 

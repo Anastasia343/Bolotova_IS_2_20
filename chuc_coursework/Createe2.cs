@@ -25,7 +25,7 @@ namespace chuc_coursework
             this.CenterToScreen();
             
         }
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
             MySqlConnection conn = new MySqlConnection(authorization.connStr);
@@ -42,14 +42,9 @@ namespace chuc_coursework
             command.Parameters.AddWithValue("KPP", textBox9.Text);
             command.ExecuteNonQuery();
             conn.Close();
+            
             this.Hide();
             
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Createe2 createe2 = new Createe2();
-            createe2.Close();
         }
     }
 }

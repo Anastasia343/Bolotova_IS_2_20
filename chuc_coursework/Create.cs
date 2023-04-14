@@ -67,7 +67,6 @@ namespace chuc_coursework
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
             MySqlConnection conn = new MySqlConnection(authorization.connStr);
             conn.Open();
             MySqlCommand command = new MySqlCommand("INSERT INTO ReceiptInvoice (date,number,dateShipment,provider,retailSum,incomingSum,quantity,totalSum) values (@date,@number,@dateShipment,@provider,@retailSum,@incomingSum,@quantity,@totalSum)");
@@ -82,6 +81,7 @@ namespace chuc_coursework
             command.Parameters.AddWithValue("totalSum", Convert.ToDecimal(textBox2.Text.Split(' ')[0]));
             command.ExecuteNonQuery();
             conn.Close();
+            this.Hide();
             
         }
 
@@ -102,10 +102,11 @@ namespace chuc_coursework
                     decimal nan = colich * (prih * 1.1m);
                     textBox2.Text = $"{Convert.ToString(nan)} руб.";
 
-            decimal nazen = Convert.ToDecimal(textBox5.Text);
+                    decimal nazen = Convert.ToDecimal(textBox5.Text);
                     decimal m = nan + nazen;
                     textBox6.Text = $"{Convert.ToString(m)} руб.";
                     break;
+
                 case 20:
                     decimal na = colich * (prih * 1.2m);
                     textBox2.Text = $"{Convert.ToString(na)} руб.";
@@ -130,8 +131,8 @@ namespace chuc_coursework
         private void button4_Click(object sender, EventArgs e)
         {
             Createe2 createe2 = new Createe2();
-            this.Hide();
             createe2.Show();
+            
         }
     }
 }

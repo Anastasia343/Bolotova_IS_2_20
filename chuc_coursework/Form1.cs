@@ -126,7 +126,7 @@ namespace chuc_coursework
         {
             Createe2 createe2 = new Createe2();
             
-            createe2.Show();
+            createe2.ShowDialog();
         }
     }
 }
