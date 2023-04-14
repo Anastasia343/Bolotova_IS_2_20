@@ -100,19 +100,19 @@ namespace chuc_coursework
             {
                 case 10:
                     decimal nan = colich * (prih * 1.1m);
-                    textBox2.Text = ($"{Convert.ToString(nan)} руб.");
+                    textBox2.Text = /*($"{*/Convert.ToString(nan) /*руб."*/;
 
-                    decimal nazen = Convert.ToDecimal(textBox5.Text);
+            decimal nazen = Convert.ToDecimal(textBox5.Text);
                     decimal m = nan + nazen;
-                    textBox6.Text = ($"{Convert.ToString(m)} руб.");
+                    textBox6.Text = Convert.ToString(m);
                     break;
                 case 20:
                     decimal na = colich * (prih * 1.2m);
-                    textBox2.Text = ($"{Convert.ToString(na)} руб.");
+                    textBox2.Text = Convert.ToString(na);
 
                     decimal naze = Convert.ToDecimal(textBox5.Text);
                     decimal mm = na + naze;
-                    textBox6.Text =($"{Convert.ToString(mm)} руб.");
+                    textBox6.Text =Convert.ToString(mm);
                     break;
             }
         }
