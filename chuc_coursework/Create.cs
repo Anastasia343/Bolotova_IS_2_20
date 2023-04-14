@@ -70,16 +70,16 @@ namespace chuc_coursework
             
             MySqlConnection conn = new MySqlConnection(authorization.connStr);
             conn.Open();
-            MySqlCommand command = new MySqlCommand("INSERT INTO ReceiptInvoice (date,number,dateShipment,provider,retailSum,incomingSum,quantity) values (@date,@number,@dateShipment,@provider,@retailSum,@incomingSum,@quantity)");
+            MySqlCommand command = new MySqlCommand("INSERT INTO ReceiptInvoice (date,number,dateShipment,provider,retailSum,incomingSum,quantity,totalSum) values (@date,@number,@dateShipment,@provider,@retailSum,@incomingSum,@quantity,@totalSum)");
             command.Connection = conn;
             command.Parameters.AddWithValue("date", dateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm:ss"));
             command.Parameters.AddWithValue("number", textBox3.Text);
             command.Parameters.AddWithValue("dateShipment", dateTimePicker2.Value.ToString("yyyy-MM-dd HH:mm:ss"));
             command.Parameters.AddWithValue("provider", comboBox1.SelectedItem);
             command.Parameters.AddWithValue("incomingSum", textBox4.Text);
-            
-            command.Parameters.AddWithValue("retailSum", Convert.ToDecimal(textBox2.Text));
+            command.Parameters.AddWithValue("retailSum", Convert.ToDecimal(textBox6.Text));
             command.Parameters.AddWithValue("quantity", textBox3.Text);
+            command.Parameters.AddWithValue("totalSum", Convert.ToDecimal(textBox2.Text));
             command.ExecuteNonQuery();
             conn.Close();
             this.Close();
