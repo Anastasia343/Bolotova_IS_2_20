@@ -34,6 +34,7 @@ namespace chuc_coursework
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
             Koll();
         }
         private void Koll()

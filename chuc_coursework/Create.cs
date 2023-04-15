@@ -22,6 +22,7 @@ namespace chuc_coursework
 
         private void Create_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
             Toll();
             Po();
             Vo();
@@ -120,7 +121,7 @@ namespace chuc_coursework
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            Create.ActiveForm.Invalidate();
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)

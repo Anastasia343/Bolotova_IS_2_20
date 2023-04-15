@@ -15,6 +15,7 @@ namespace chuc_coursework
 {
     public partial class Createe2 : Form
     {
+        
         public Createe2()
         {
             InitializeComponent();
@@ -44,7 +45,8 @@ namespace chuc_coursework
             conn.Close();
             
             this.Hide();
-            
+             
+
         }
     }
 }

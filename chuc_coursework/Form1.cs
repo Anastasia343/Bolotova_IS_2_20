@@ -38,6 +38,7 @@ namespace chuc_coursework
         private void Form1_Load(object sender, EventArgs e)
         {
             LoadData();
+            this.CenterToScreen();
         }
         private void LoadData() 
         {
@@ -125,7 +126,7 @@ namespace chuc_coursework
         private void createToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Createe2 createe2 = new Createe2();
-            
+
             createe2.ShowDialog();
         }
     }
