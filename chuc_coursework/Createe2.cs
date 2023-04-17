@@ -15,10 +15,11 @@ namespace chuc_coursework
 {
     public partial class Createe2 : Form
     {
-        
-        public Createe2()
+        Create ww;
+        public Createe2(Create qq)
         {
             InitializeComponent();
+            this.ww = qq;
         }
 
         private void Createe2_Load(object sender, EventArgs e)
@@ -43,7 +44,8 @@ namespace chuc_coursework
             command.Parameters.AddWithValue("KPP", textBox9.Text);
             command.ExecuteNonQuery();
             conn.Close();
-            
+            ww.comboBox1.Items.Clear();
+            ww.Toll();
             this.Hide();
              
 

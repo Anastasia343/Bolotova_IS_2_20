@@ -37,7 +37,7 @@ namespace chuc_coursework
             this.CenterToScreen();
             Koll();
         }
-        private void Koll()
+        public void Koll()
         {
             MySqlConnection conn = new MySqlConnection(authorization.connStr);
             conn.Open();
@@ -73,6 +73,12 @@ namespace chuc_coursework
             v.ShowDialog();
             dataGridView1.Rows.Clear();
             Koll();
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Delete3 delete3 = new Delete3(this);
+            delete3.ShowDialog();
         }
     }
 }

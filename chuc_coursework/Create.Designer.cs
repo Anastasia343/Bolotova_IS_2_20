@@ -58,6 +58,7 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -198,7 +199,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(372, 149);
+            this.label12.Location = new System.Drawing.Point(372, 202);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(105, 20);
             this.label12.TabIndex = 26;
@@ -208,7 +209,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.Location = new System.Drawing.Point(372, 204);
+            this.label13.Location = new System.Drawing.Point(372, 148);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(77, 20);
             this.label13.TabIndex = 27;
@@ -238,7 +239,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(376, 227);
+            this.textBox5.Location = new System.Drawing.Point(376, 171);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(212, 20);
             this.textBox5.TabIndex = 33;
@@ -301,7 +302,7 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(376, 172);
+            this.comboBox3.Location = new System.Drawing.Point(376, 225);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(212, 21);
             this.comboBox3.TabIndex = 44;
@@ -356,6 +357,17 @@
             this.button5.TabIndex = 50;
             this.button5.Text = "✚";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(376, 253);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(82, 17);
+            this.checkBox1.TabIndex = 51;
+            this.checkBox1.Text = "без налога";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // Create
             // 
@@ -363,6 +375,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.NavajoWhite;
             this.ClientSize = new System.Drawing.Size(1357, 399);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.textBox6);
@@ -434,5 +447,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         public System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

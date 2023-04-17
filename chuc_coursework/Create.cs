@@ -131,9 +131,14 @@ namespace chuc_coursework
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Createe2 createe2 = new Createe2();
+            Createe2 createe2 = new Createe2(this);
             createe2.Show();
             
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

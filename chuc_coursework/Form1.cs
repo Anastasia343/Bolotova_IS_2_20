@@ -125,9 +125,8 @@ namespace chuc_coursework
 
         private void createToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Createe2 createe2 = new Createe2();
-
-            createe2.ShowDialog();
+            //Createe2 createe2 = new Createe2(this);
+            //createe2.ShowDialog();
         }
     }
 }
