@@ -68,20 +68,20 @@ namespace chuc_coursework
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MySqlConnection conn = new MySqlConnection(authorization.connStr);
-            conn.Open();
-            MySqlCommand command = new MySqlCommand("INSERT INTO ReceiptInvoice (date,number,dateShipment,provider,retailSum,incomingSum,quantity,totalSum) values (@date,@number,@dateShipment,@provider,@retailSum,@incomingSum,@quantity,@totalSum)");
-            command.Connection = conn;
-            command.Parameters.AddWithValue("date", dateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm:ss"));
-            command.Parameters.AddWithValue("number", textBox1.Text);
-            command.Parameters.AddWithValue("dateShipment", dateTimePicker2.Value.ToString("yyyy-MM-dd HH:mm:ss"));
-            command.Parameters.AddWithValue("provider", comboBox1.SelectedItem);
-            command.Parameters.AddWithValue("incomingSum", textBox4.Text);
-            command.Parameters.AddWithValue("retailSum", Convert.ToDecimal(textBox6.Text.Split(' ')[0]));
-            command.Parameters.AddWithValue("quantity", textBox3.Text);
-            command.Parameters.AddWithValue("totalSum", Convert.ToDecimal(textBox2.Text.Split(' ')[0]));
-            command.ExecuteNonQuery();
-            conn.Close();
+            //MySqlConnection conn = new MySqlConnection(authorization.connStr);
+            //conn.Open();
+            //MySqlCommand command = new MySqlCommand("INSERT INTO ReceiptInvoice (date,number,dateShipment,provider,retailSum,incomingSum,quantity,totalSum) values (@date,@number,@dateShipment,@provider,@retailSum,@incomingSum,@quantity,@totalSum)");
+            //command.Connection = conn;
+            //command.Parameters.AddWithValue("date", dateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm:ss"));
+            //command.Parameters.AddWithValue("number", textBox1.Text);
+            //command.Parameters.AddWithValue("dateShipment", dateTimePicker2.Value.ToString("yyyy-MM-dd HH:mm:ss"));
+            //command.Parameters.AddWithValue("provider", comboBox1.SelectedItem);
+            //command.Parameters.AddWithValue("incomingSum", textBox4.Text);
+            //command.Parameters.AddWithValue("retailSum", Convert.ToDecimal(textBox6.Text.Split(' ')[0]));
+            //command.Parameters.AddWithValue("quantity", textBox3.Text);
+            //command.Parameters.AddWithValue("totalSum", Convert.ToDecimal(textBox2.Text.Split(' ')[0]));
+            //command.ExecuteNonQuery();
+            //conn.Close();
             this.Hide();
             
         }
@@ -90,8 +90,7 @@ namespace chuc_coursework
         {
 
         }
-
-        private void button3_Click(object sender, EventArgs e)
+        public void Maz()
         {
             listBox1.Items.Add($"номер: {textBox1.Text}, контрагент: {comboBox1.Text}, название: {comboBox2.Text}, количество: {textBox3.Text}");
             decimal colich = Convert.ToDecimal(textBox3.Text);
@@ -114,9 +113,37 @@ namespace chuc_coursework
 
                     decimal naze = Convert.ToDecimal(textBox5.Text);
                     decimal mm = na + naze;
-                    textBox6.Text =$"{Convert.ToString(mm)} руб.";
+                    textBox6.Text = $"{Convert.ToString(mm)} руб.";
+                    break;
+
+                case 0:
+                    decimal maze = colich * (prih * 1);
+                    textBox2.Text = $"{Convert.ToString(maze)} руб.";
+
+                    decimal vaze = Convert.ToDecimal(textBox5.Text);
+                    decimal b = maze + vaze;
+                    textBox6.Text = $"{Convert.ToString(b)} руб.";
                     break;
             }
+
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Maz();
+            MySqlConnection conn = new MySqlConnection(authorization.connStr);
+            conn.Open();
+            MySqlCommand command = new MySqlCommand("INSERT INTO ReceiptInvoice (date,number,dateShipment,provider,retailSum,incomingSum,quantity,totalSum) values (@date,@number,@dateShipment,@provider,@retailSum,@incomingSum,@quantity,@totalSum)");
+            command.Connection = conn;
+            command.Parameters.AddWithValue("date", dateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm:ss"));
+            command.Parameters.AddWithValue("number", textBox1.Text);
+            command.Parameters.AddWithValue("dateShipment", dateTimePicker2.Value.ToString("yyyy-MM-dd HH:mm:ss"));
+            command.Parameters.AddWithValue("provider", comboBox1.SelectedItem);
+            command.Parameters.AddWithValue("incomingSum", textBox4.Text);
+            command.Parameters.AddWithValue("retailSum", Convert.ToDecimal(textBox6.Text.Split(' ')[0]));
+            command.Parameters.AddWithValue("quantity", textBox3.Text);
+            command.Parameters.AddWithValue("totalSum", Convert.ToDecimal(textBox2.Text.Split(' ')[0]));
+            command.ExecuteNonQuery();
+            conn.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -139,6 +166,11 @@ namespace chuc_coursework
         private void button5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }
