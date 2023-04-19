@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace chuc_coursework
 {
-    public partial class Producreate : Form
+    public partial class _2Formcreate : Form
     {
-        public Producreate()
+        public _2Formcreate()
         {
             InitializeComponent();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

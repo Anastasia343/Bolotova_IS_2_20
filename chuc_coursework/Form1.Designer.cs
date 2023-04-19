@@ -161,6 +161,7 @@
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(387, 26);
             this.textBox12.TabIndex = 29;
+            this.textBox12.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
             // 
             // button7
             // 
@@ -183,7 +184,7 @@
             this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button9.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button9.Location = new System.Drawing.Point(1353, 9);
+            this.button9.Location = new System.Drawing.Point(1339, 60);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(109, 45);
             this.button9.TabIndex = 33;
@@ -197,7 +198,7 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(1353, 60);
+            this.button1.Location = new System.Drawing.Point(1339, 111);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(109, 45);
             this.button1.TabIndex = 0;

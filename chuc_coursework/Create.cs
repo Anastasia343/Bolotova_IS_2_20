@@ -116,14 +116,14 @@ namespace chuc_coursework
                     textBox6.Text = $"{Convert.ToString(mm)} руб.";
                     break;
 
-                case 0:
-                    decimal maze = colich * (prih * 1);
-                    textBox2.Text = $"{Convert.ToString(maze)} руб.";
+                //case 0:
+                //    decimal maze = colich * (prih * 1);
+                //    textBox2.Text = $"{Convert.ToString(maze)} руб.";
 
-                    decimal vaze = Convert.ToDecimal(textBox5.Text);
-                    decimal b = maze + vaze;
-                    textBox6.Text = $"{Convert.ToString(b)} руб.";
-                    break;
+                //    decimal vaze = Convert.ToDecimal(textBox5.Text);
+                //    decimal b = maze + vaze;
+                //    textBox6.Text = $"{Convert.ToString(b)} руб.";
+                //    break;
             }
 
         }

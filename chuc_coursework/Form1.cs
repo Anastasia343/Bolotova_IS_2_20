@@ -128,5 +128,10 @@ namespace chuc_coursework
             //Createe2 createe2 = new Createe2(this);
             //createe2.ShowDialog();
         }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
