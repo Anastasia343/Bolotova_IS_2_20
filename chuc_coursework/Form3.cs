@@ -80,22 +80,22 @@ namespace chuc_coursework
             Delete3 delete3 = new Delete3(this);
             delete3.ShowDialog();
         }
-        public void Poisk(DataGridView bibi)
-        {
-            bibi.Rows.Clear();
+        //public void Poisk(DataGridView bibi)
+        //{
+        //    bibi.Rows.Clear();
             
-            MySqlConnection conn = new MySqlConnection(authorization.connStr);
-            conn.Open();
-            string poiskGo = $"select * from ReceiptInvoice where concat(id, date, number, dataShipment, provider, retailSum, incomingSum, quantity, totalSum) like '%" + textBox1.Text + "%'";
-            MySqlCommand command = new MySqlCommand(poiskGo, conn);
-            MySqlDataReader reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-                (bibi,reader);
-            }
-            reader.Close();
-            conn.Close();
-        }
+        //    MySqlConnection conn = new MySqlConnection(authorization.connStr);
+        //    conn.Open();
+        //    string poiskGo = $"select * from ReceiptInvoice where concat(id, date, number, dataShipment, provider, retailSum, incomingSum, quantity, totalSum) like '%" + textBox1.Text + "%'";
+        //    MySqlCommand command = new MySqlCommand(poiskGo, conn);
+        //    MySqlDataReader reader = command.ExecuteReader();
+        //    while (reader.Read())
+        //    {
+        //        (bibi,reader);
+        //    }
+        //    reader.Close();
+        //    conn.Close();
+        //}
         private void button3_Click(object sender, EventArgs e)
         {
 

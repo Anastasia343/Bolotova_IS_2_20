@@ -68,26 +68,6 @@ namespace chuc_coursework
             reader.Close();
         }
 
-        
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            dataGridView1.Rows.Clear();
-            LoadData();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            //MySqlConnection conn = new MySqlConnection(authorization.connStr);
-            //string id = textBox1.Text;
-            //string MySQL = string.Format("DELETE FROM Provider WHERE (id = {0})", id);
-            //conn.Open();
-            //MySqlCommand command = new MySqlCommand(MySQL, conn);
-            //command.ExecuteNonQuery();
-            //conn.Close();
-            //textBox1.Text = String.Empty;
-        }
-
         private void label6_Click(object sender, EventArgs e)
         {
 
@@ -132,6 +112,12 @@ namespace chuc_coursework
         private void textBox12_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Delete3 delete3 = new Delete3(this);
+            delete3.ShowDialog();
         }
     }
 }

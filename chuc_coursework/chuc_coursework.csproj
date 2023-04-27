@@ -109,6 +109,12 @@
     <Compile Include="Createe2.Designer.cs">
       <DependentUpon>Createe2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Delete1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Delete1.Designer.cs">
+      <DependentUpon>Delete1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Delete3.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Createe2.resx">
       <DependentUpon>Createe2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Delete1.resx">
+      <DependentUpon>Delete1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Delete3.resx">
       <DependentUpon>Delete3.cs</DependentUpon>
