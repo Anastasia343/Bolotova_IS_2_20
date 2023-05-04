@@ -29,6 +29,8 @@ namespace chuc_coursework
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+
             MySqlConnection conn = new MySqlConnection(authorization.connStr);
             string id = textBox1.Text;
             string MySQL = string.Format("DELETE FROM ReceiptInvoice WHERE (id = {0})", id);

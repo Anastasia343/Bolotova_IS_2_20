@@ -229,7 +229,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button9;
@@ -246,5 +245,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }

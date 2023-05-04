@@ -92,6 +92,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Delete1";
             this.Text = "Delete1";
+            this.Load += new System.EventHandler(this.Delete1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

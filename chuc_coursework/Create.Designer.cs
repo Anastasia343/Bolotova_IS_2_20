@@ -248,7 +248,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label15.Location = new System.Drawing.Point(12, 190);
+            this.label15.Location = new System.Drawing.Point(752, 337);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(73, 20);
             this.label15.TabIndex = 35;
@@ -256,7 +256,7 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(16, 213);
+            this.textBox7.Location = new System.Drawing.Point(756, 360);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(212, 20);
             this.textBox7.TabIndex = 36;

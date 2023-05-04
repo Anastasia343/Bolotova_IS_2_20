@@ -40,7 +40,7 @@ namespace chuc_coursework
             LoadData();
             this.CenterToScreen();
         }
-        private void LoadData() 
+        public void LoadData() 
         {
             MySqlConnection conn = new MySqlConnection(authorization.connStr);
             conn.Open();
@@ -116,8 +116,8 @@ namespace chuc_coursework
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Delete3 delete3 = new Delete3(this);
-            delete3.ShowDialog();
+            Delete1 delete1 = new Delete1(this);
+            delete1.ShowDialog();
         }
     }
 }
