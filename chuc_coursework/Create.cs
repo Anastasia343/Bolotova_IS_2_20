@@ -165,7 +165,7 @@ namespace chuc_coursework
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            CreateForm2 ct = new CreateForm2();
         }
 
         private void button6_Click(object sender, EventArgs e)

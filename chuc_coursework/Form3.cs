@@ -6,8 +6,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace chuc_coursework
 {
@@ -17,21 +19,6 @@ namespace chuc_coursework
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Menu menu = new Menu();
-            this.Hide();
-            menu.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            authorization aut = new authorization();
-            this.Hide();
-            aut.Show();
-        }
-
         private void Form3_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
@@ -80,25 +67,34 @@ namespace chuc_coursework
             Delete3 delete3 = new Delete3(this);
             delete3.ShowDialog();
         }
-        //public void Poisk(DataGridView bibi)
-        //{
-        //    bibi.Rows.Clear();
-            
-        //    MySqlConnection conn = new MySqlConnection(authorization.connStr);
-        //    conn.Open();
-        //    string poiskGo = $"select * from ReceiptInvoice where concat(id, date, number, dataShipment, provider, retailSum, incomingSum, quantity, totalSum) like '%" + textBox1.Text + "%'";
-        //    MySqlCommand command = new MySqlCommand(poiskGo, conn);
-        //    MySqlDataReader reader = command.ExecuteReader();
-        //    while (reader.Read())
-        //    {
-        //        (bibi,reader);
-        //    }
-        //    reader.Close();
-        //    conn.Close();
-        //}
         private void button3_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                string test = dataGridView1[1, i].Value.ToString();
+                Regex reg = new Regex($@"{textBox1.Text}", RegexOptions.IgnoreCase);
+                MatchCollection matches = reg.Matches(test);
+                if (matches.Count > 0)
+                {
+                    foreach (Match item in matches)
+                    {
+                        dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.LightGoldenrodYellow;
+                    }
+                }
+            }
+            textBox1.Text = String.Empty;
+        }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Menu menu = new Menu();
+            this.Hide();
+            menu.Show();
         }
     }
 }

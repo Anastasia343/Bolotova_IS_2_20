@@ -13,22 +13,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace chuc_coursework
 {
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
             InitializeComponent();
+            
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            authorization auth = new authorization();
-            this.Hide();
-            auth.Show();
-        }
+        
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -73,40 +71,17 @@ namespace chuc_coursework
 
         }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            for (int i=0; i < dataGridView1.Rows.Count; i++)
-            {
-                string test = dataGridView1[1, i].Value.ToString();
-                Regex reg = new Regex($@"{textBox12.Text}", RegexOptions.IgnoreCase);
-                MatchCollection matches = reg.Matches(test);
-                if (matches.Count > 0)
-                {
-                    foreach(Match item in matches) 
-                    {
-                        dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.LightGoldenrodYellow;
-                    }
-                }
-            }
-            textBox12.Text = String.Empty;
-        }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
         }
 
-        private void button9_Click(object sender, EventArgs e)
-        {
-            Menu menu = new Menu();
-            this.Hide();
-            menu.Show();
-        }
+        
 
         private void createToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Createe2 createe2 = new Createe2(this);
-            //createe2.ShowDialog();
+            Create3 create3 = new Create3();
+            create3.ShowDialog();
         }
 
         private void textBox12_TextChanged(object sender, EventArgs e)
@@ -118,6 +93,31 @@ namespace chuc_coursework
         {
             Delete1 delete1 = new Delete1(this);
             delete1.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Menu menu = new Menu();
+            this.Hide();
+            menu.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                string test = dataGridView1[1, i].Value.ToString();
+                Regex reg = new Regex($@"{textBox1.Text}", RegexOptions.IgnoreCase);
+                MatchCollection matches = reg.Matches(test);
+                if (matches.Count > 0)
+                {
+                    foreach (Match item in matches)
+                    {
+                        dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.LightGoldenrodYellow;
+                    }
+                }
+            }
+            textBox1.Text = String.Empty;
         }
     }
 }

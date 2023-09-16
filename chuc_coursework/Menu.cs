@@ -38,12 +38,7 @@ namespace chuc_coursework
             form3.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Form4 form4 = new Form4();
-            this.Hide();
-            form4.Show();
-        }
+
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -51,5 +46,7 @@ namespace chuc_coursework
             this.Hide();
             aut.Show();
         }
+
+        
     }
 }

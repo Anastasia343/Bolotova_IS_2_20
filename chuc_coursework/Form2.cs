@@ -6,8 +6,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace chuc_coursework
 {
@@ -16,20 +18,6 @@ namespace chuc_coursework
         public Form2()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            authorization auth = new authorization();
-            this.Hide();
-            auth.Show();
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            Menu menu = new Menu();
-            this.Hide();
-            menu.Show();
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -62,6 +50,48 @@ namespace chuc_coursework
             }
             conn.Close();
             reader.Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                string test = dataGridView1[1, i].Value.ToString();
+                Regex reg = new Regex($@"{textBox1.Text}", RegexOptions.IgnoreCase);
+                MatchCollection matches = reg.Matches(test);
+                if (matches.Count > 0)
+                {
+                    foreach (Match item in matches)
+                    {
+                        dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.LightGoldenrodYellow;
+                    }
+                }
+            }
+            textBox1.Text = String.Empty;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Menu menu = new Menu();
+            this.Hide();
+            menu.Show();
+        }
+
+        private void createToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateForm2 createForm2 = new CreateForm2();
+            createForm2.ShowDialog();
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DeleteForm2 deleteForm2 = new DeleteForm2();
+            deleteForm2.ShowDialog();
         }
     }
 }

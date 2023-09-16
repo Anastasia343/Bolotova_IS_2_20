@@ -15,9 +15,7 @@ namespace chuc_coursework
 {
     public partial class authorization : Form
     {
-        public static string connStr = "server = chuc.sdlik.ru;port = 33333;user = st_2_20_4;database=is_2_20_st4_KURS;password=65655604;";
-        //Form1 form1 = new Form1();
-        //authorization authh =new authorization();
+        public static string connStr = "server = chuc.caseum.ru;port = 33333;user = st_2_20_4;database=is_2_20_st4_KURS;password=65655604;";
         Menu menu = new Menu();
         public authorization()
         {
@@ -82,7 +80,7 @@ namespace chuc_coursework
                 //    MessageBox.Show("admin Rakova");
                 //    break;
                 //default:
-                //    conn.Close(); // висит форма 1
+                //    conn.Close(); 
                 //    break;
             }
         }
